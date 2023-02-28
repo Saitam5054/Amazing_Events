@@ -33,6 +33,16 @@ table {
     margin-top: 100px;
 }
 
+thead {
+    background-color: rgb(199, 199, 199);
+}
+
+#footer_contact, #footer_stats {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
 /* .bd-placeholder-img {
     font-size: 1.125rem;
     text-anchor: middle;
