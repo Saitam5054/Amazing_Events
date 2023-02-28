@@ -23,6 +23,15 @@ body {
     border: 1px solid black;
 }
 
+.form_contact {
+    margin-top: 100px;
+    width: 40em;
+}
+
+table {
+    background-color: white;
+    margin-top: 100px;
+}
 
 /* .bd-placeholder-img {
     font-size: 1.125rem;
