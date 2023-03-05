@@ -17,11 +17,10 @@
 <body>
     <header>
 
-        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <nav class="navbar navbar-expand-lg">
             <div class="container-fluid">
                 <a class="navbar-brand" href="#">
-                    <img src="./assets/images/Logo_Amazing_Events.png" alt="Logo" height="30"
-                        class="d-inline-block align-text-top">
+                    <img src="./assets/images/Logo_Amazing_Events.png" alt="Logo" height="30" class="d-inline-block align-text-top">
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
@@ -31,7 +30,7 @@
                 <ul class="nav justify-content-end collapse navbar-collapse navbar-nav me-auto mb-2 mb-lg-0"
                     id="navbarSupportedContent">
                     <li class="nav-item">
-                        <a class="nav-link" href="./home.html">Home</a>
+                        <a class="nav-link" id="onpage" href="./home.html">Home</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="./upcoming.html">Upcoming Events</a>
@@ -51,7 +50,7 @@
 
     </header>
 
-    <div id="carouselExampleIndicators" class="carousel slide py-2 mx-2 shadow rounded collap">
+    <div id="carousel" class="carousel slide py-2 mx-2 shadow rounded collap">
         <div class="carousel-inner">
             <div class="carousel-item active">
                 <a href="./home.html" class="carouselItem text-decoration-none">
@@ -80,13 +79,11 @@
             </div>
 
         </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
-            data-bs-slide="prev">
+        <button class="carousel-control-prev" type="button" data-bs-target="#carousel" data-bs-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Previous</span>
         </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
-            data-bs-slide="next">
+        <button class="carousel-control-next" type="button" data-bs-target="#carousel" data-bs-slide="next">
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Next</span>
         </button>
@@ -94,34 +91,37 @@
 
     <div class="pt-4 pb-5 container">
         <div class="row justify-content-between">
-            <div class="d-flex mx-4 col-12 col-sm-10 col-md-12 col-lg-4 col-xl-3 justify-content-center">
-                <div class="m-3 d-flex">
+            <div class="d-flex py-4 col-11 col-md-12 col-lg-4 col-xl-3 justify-content-center">
+                <div class="form-check d-flex">
                     <input class="form-check-input mx-2" type="checkbox" id="cinema">
-                    <label class="form-check-label" for="cinema">cinema</label>
+                    <label class="form-check-label" for="cinema">Cinema</label>
                 </div>
-                <div class="m-3 d-flex">
-                    <input class="form-check-input mx-2" type="checkbox" id="party">
-                    <label class="form-check-label" for="party">party</label>
+                <div class="form-check d-flex">
+                    <input class="form-check-input mx-2" type="checkbox" id="costume">
+                    <label class="form-check-label" for="costume">Costume</label>
                 </div>
-                <div class="m-3 d-flex">
+                <div class="form-check d-flex">
                     <input class="form-check-input mx-2" type="checkbox" id="food">
-                    <label class="form-check-label" for="food">food</label>
+                    <label class="form-check-label" for="food">Food</label>
                 </div>
-                <div class="m-3 d-flex">
-                    <input class="form-check-input mx-2" type="checkbox" id="sports">
-                    <label class="form-check-label" for="sports">sports</label>
+                <div class="form-check d-flex">
+                    <input class="form-check-input mx-2" type="checkbox" id="race">
+                    <label class="form-check-label" for="race">Race</label>
                 </div>
-                <div class="m-3 d-flex">
-                    <input class="form-check-input mx-2" type="checkbox" id="tour">
-                    <label class="form-check-label" for="tour">tour</label>
+                <div class="form-check d-flex">
+                    <input class="form-check-input mx-2" type="checkbox" id="museum">
+                    <label class="form-check-label" for="museum">Museum</label>
                 </div>
-                <div class="m-3 d-flex">
+                <div class="form-check d-flex">
                     <input class="form-check-input mx-2" type="checkbox" id="music">
-                    <label class="form-check-label" for="music">music</label>
+                    <label class="form-check-label" for="music">Music</label>
+                </div>
+                <div class="form-check d-flex">
+                    <input class="form-check-input mx-2" type="checkbox" id="book">
+                    <label class="form-check-label" for="book">Book</label>
                 </div>
             </div>
-            <div class="d-flex p-2 m-3 col-12 col-sm-10 col-md-12 col-lg-4 col-xl-3 justify-content-center"
-                role="search">
+            <div class="d-flex p-4 mx-4 col-11 col-sm-10 col-md-12 col-lg-4 col-xl-3 justify-content-center" role="search">
                 <input type="search" placeholder="Search" style="width: 100%;" class="form-control me-2">
                 <button class="btn btn-outline-success" type="submit">Search</button>
             </div>

@@ -17,7 +17,7 @@
 <body>
   <header>
 
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <nav class="navbar navbar-expand-lg">
       <div class="container-fluid">
         <a class="navbar-brand" href="#">
           <img src="./assets/images/Logo_Amazing_Events.png" alt="Logo" height="30"
@@ -36,7 +36,7 @@
             <a class="nav-link" href="./upcoming.html">Upcoming Events</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="./past.html">Past Events</a>
+            <a class="nav-link" id="onpage" href="./past.html">Past Events</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="./contact.html">Contact</a>
@@ -50,46 +50,46 @@
 
   </header>
 
-    <div id="carouselExampleIndicators" class="carousel slide py-2 mx-2 shadow rounded collap">
-      <div class="carousel-inner">
+  <div id="carousel" class="carousel slide py-2 mx-2 shadow rounded collap">
+    <div class="carousel-inner">
         <div class="carousel-item">
-          <a href="./home.html" class="carouselItem text-decoration-none">
-            <h3 class="text-center">Home</h3>
-          </a>
+            <a href="./home.html" class="carouselItem text-decoration-none">
+                <h3 class="text-center">Home</h3>
+            </a>
         </div>
         <div class="carousel-item">
-          <a href="./upcoming.html" class="carouselItem text-decoration-none">
-            <h3 class="text-center">Upcoming Events</h3>
-          </a>
+            <a href="./upcoming.html" class="carouselItem text-decoration-none">
+                <h3 class="text-center">Upcoming Events</h3>
+            </a>
         </div>
         <div class="carousel-item active">
-          <a href="./past.html" class="carouselItem text-decoration-none">
-            <h3 class="text-center">Past Events</h3>
-          </a>
+            <a href="./past.html" class="carouselItem text-decoration-none">
+                <h3 class="text-center">Past Events</h3>
+            </a>
         </div>
         <div class="carousel-item">
-          <a href="./contact.html" class="carouselItem text-decoration-none">
-            <h3 class="text-center">Contact Us</h3>
-          </a>
+            <a href="./contact.html" class="carouselItem text-decoration-none">
+                <h3 class="text-center">Contact Us</h3>
+            </a>
         </div>
         <div class="carousel-item">
-          <a href="./stats.html" class="carouselItem text-decoration-none">
-            <h3 class="text-center">Stats</h3>
-          </a>
+            <a href="./stats.html" class="carouselItem text-decoration-none">
+                <h3 class="text-center">Stats</h3>
+            </a>
         </div>
 
-      </div>
-      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carousel"
         data-bs-slide="prev">
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
         <span class="visually-hidden">Previous</span>
-      </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carousel"
         data-bs-slide="next">
         <span class="carousel-control-next-icon" aria-hidden="true"></span>
         <span class="visually-hidden">Next</span>
-      </button>
-    </div>
+    </button>
+</div>
 
     <div class="pt-4 pb-5 container">
       <div class="row justify-content-between">
@@ -119,11 +119,10 @@
                   <label class="form-check-label" for="music">music</label>
               </div>
           </div>
-          <div class="d-flex p-2 m-3 col-12 col-sm-10 col-md-12 col-lg-4 col-xl-3 justify-content-center"
-              role="search">
-              <input type="search" placeholder="Search" style="width: 400px;" class="form-control me-2">
-              <button class="btn btn-outline-success" type="submit">Search</button>
-          </div>
+          <div class="d-flex p-4 mx-4 col-11 col-sm-10 col-md-12 col-lg-4 col-xl-3 justify-content-center" role="search">
+            <input type="search" placeholder="Search" style="width: 100%;" class="form-control me-2">
+            <button class="btn btn-outline-success" type="submit">Search</button>
+        </div>
       </div>
   </div>
 
@@ -135,7 +134,7 @@
         </div>
     </main>
 
-    <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+    <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top container">
       <div class="col-md-4 d-flex align-items-center">
         <a href="http://127.0.0.1:5500/" class="mb-3 me-2 mb-md-0 text-muted text-decoration-none lh-1">
           <svg class="bi" width="30" height="24">

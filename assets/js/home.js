@@ -173,19 +173,20 @@ var data = {
 };
 
 let card = document.getElementById("card-home");
+
 for (let x in Object.values(data.events)) {
-  let propierty = data.events[x]
-  card.innerHTML += `<section class="card text-center p-2 m-2 col-8 col-sm-8 col-md-5 col-lg-4 col-xl-3" style="background-color: rgb(240, 237, 230);">
+  let property = data.events[x]
+  card.innerHTML += `<section class="card text-center p-2 m-2 col-8 col-sm-8 col-md-5 col-lg-4 col-xl-3">
                       <div class="card rounded-3 shadow-sm">
-                          <img src="${propierty.image}" class="card-img-top" style="height: 175px;" alt="${propierty.name}">
-                          <h2 class="card-title">${propierty.name}</h2>
-                          <p class="list-group-item">${propierty.description}</p>
+                          <img src="${property.image}" class="card-img-top" style="height: 170px;" alt="${property.name}">
+                          <h2 class="card-title">${property.name}</h2>
+                          <p class="list-group-item">${property.description}</p>
                           <ul class="list-group list-group-flush">
-                            <li class="list-group-item">${propierty.place}</li>
+                            <li class="list-group-item"><b>Place:</b> ${property.place}</li>
                           </ul>
                           <div class="card-body d-flex justify-content-between">
-                            <h6 class="card-link">$${propierty.price}</h6>
-                            <h6 class="card-link">${propierty.date}</h6>
+                            <h6 class="card-link"><b>Price:</b> $${property.price}</h6>
+                            <h6 class="card-link"><b>Date:</b> ${property.date}</h6>
                           </div>
                           <a class="btn btn-primary" href="./details.html">see more</a>
                       </div>
