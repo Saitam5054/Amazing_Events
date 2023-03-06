@@ -181,7 +181,7 @@ for (let x in Object.values(data.events)) {
     card.innerHTML += `<section class="card text-center p-2 m-2 col-8 col-sm-8 col-md-5 col-lg-4 col-xl-3">
                         <div class="card rounded-3 shadow-sm">
                           <img src="${property.image}" class="card-img-top" style="height: 175px;" alt="${property.name}">
-                          <h2 class="card-title">${property.name}</h2>
+                          <h2 class="card-title"><b>${property.name}</b></h2>
                           <p class="list-group-item">${property.description}</p>
                           <ul class="list-group list-group-flush">
                           <li class="list-group-item"><b>Place:</b> ${property.place}</li>

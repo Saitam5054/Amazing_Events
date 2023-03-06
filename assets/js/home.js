@@ -173,13 +173,14 @@ var data = {
 };
 
 let card = document.getElementById("card-home");
+let noResults = document.getElementById("no-results");
 
 for (let x in Object.values(data.events)) {
   let property = data.events[x]
-  card.innerHTML += `<section class="card text-center p-2 m-2 col-8 col-sm-8 col-md-5 col-lg-4 col-xl-3">
+  card.innerHTML += `<section class="card text-center p-2 m-2 col-8 col-sm-8 col-md-5 col-lg-4 col-xl-3" id="card_filter">
                       <div class="card rounded-3 shadow-sm">
                           <img src="${property.image}" class="card-img-top" style="height: 170px;" alt="${property.name}">
-                          <h2 class="card-title">${property.name}</h2>
+                          <h2 class="card-title"><b>${property.name}</b></h2>
                           <p class="list-group-item">${property.description}</p>
                           <ul class="list-group list-group-flush">
                             <li class="list-group-item"><b>Place:</b> ${property.place}</li>
@@ -192,3 +193,16 @@ for (let x in Object.values(data.events)) {
                       </div>
                     </section>`;
 };
+
+document.addEventListener("keyup", e => {
+  if (e.target.matches(".form-control")) {
+
+    if (e.key === "Escape")e.target.value = ""
+
+    document.querySelectorAll("#card_filter").forEach(card => {
+      card.textContent.toLowerCase().includes(e.target.value.toLowerCase())
+      ? card.classList.remove("filter")
+      : card.classList.add("filter");
+    });
+  }
+})
