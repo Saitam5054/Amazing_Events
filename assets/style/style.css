@@ -6,6 +6,13 @@
 
 body {
     background: linear-gradient(#5f2675, #a88c8c);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    flex-grow: 1;
 }
 
 nav {
@@ -50,6 +57,10 @@ label {
     color: rgb(250, 255, 186);
 }
 
+#card_div {
+    height: 100%;
+}
+
 #card-home p, #card-upcoming p, #card-past p {
     height: 4rem;
 }
@@ -64,7 +75,39 @@ label {
     transition: transform .8s;
     z-index: 1;
 }
-  
+
+#card_filter a {
+    letter-spacing: 5px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+#card-details {
+    margin-top: 100px;
+}
+
+#data_details h3 {
+    padding-bottom: 10px;
+    font-weight: bold;
+    border-bottom: 1px solid gray;
+}
+
+#img_details {
+    width: auto;
+    height: 100%;
+    object-fit: cover;
+}
+
+#h6_details {
+    border-top: 1px solid gray;
+    border-bottom: 1px solid gray;
+    margin-bottom: 20px;
+}
+
+#a_details {
+    font-size: 20px;
+}
+
 .filter {
     opacity: 0;
     transition: opacity 0.5s ease;
@@ -85,11 +128,9 @@ thead {
     background-color: rgb(199, 199, 199);
 }
 
-#footer_contact, #footer_stats {
-    display: flex;
-    flex-direction: column;
-    min-height: 50vh;
-}
+footer {
+    flex-shrink: 0;
+  }
 
 footer #footer_div {
   margin: 0 100px;

@@ -173,14 +173,13 @@ var data = {
 };
 
 let card = document.getElementById("card-home");
-let noResults = document.getElementById("no-results");
 
 for (let x in Object.values(data.events)) {
   let property = data.events[x]
   card.innerHTML += `<section class="card text-center p-2 m-2 col-8 col-sm-8 col-md-5 col-lg-4 col-xl-3" id="card_filter">
-                      <div class="card rounded-3 shadow-sm">
+                      <div class="card rounded-3 shadow-sm" id="card_div">
                           <img src="${property.image}" class="card-img-top" style="height: 170px;" alt="${property.name}">
-                          <h2 class="card-title"><b>${property.name}</b></h2>
+                          <h2 class="card-title">${property.name}</h2>
                           <p class="list-group-item">${property.description}</p>
                           <ul class="list-group list-group-flush">
                             <li class="list-group-item"><b>Place:</b> ${property.place}</li>
@@ -189,7 +188,7 @@ for (let x in Object.values(data.events)) {
                             <h6 class="card-link"><b>Price:</b> $${property.price}</h6>
                             <h6 class="card-link"><b>Date:</b> ${property.date}</h6>
                           </div>
-                          <a class="btn btn-primary" href="./details.html">see more</a>
+                          <a class="btn btn-primary" href="./details.html?id=${property._id}">see more</a>
                       </div>
                     </section>`;
 };
@@ -206,3 +205,53 @@ document.addEventListener("keyup", e => {
     });
   }
 })
+
+let categories = data.events.filter((u) => u.category);
+categories.forEach(i => console.log(i.category))
+
+
+let element = document.getElementById("checkbox")[name].checked;
+
+if (element = categories.forEach(i => i.category)) {
+  document.querySelectorAll("#card_filter").forEach(card => {
+    card.textContent
+    ? card.classList.remove("filter")
+    : card.classList.add("filter");
+  });
+}
+
+
+
+function filterCards() {
+  // Obtener todas las casillas de verificación
+  const checkboxes = document.querySelectorAll('input[type=checkbox]');
+
+  // Crear una matriz vacía para almacenar las categorías seleccionadas
+  const categories = [];
+
+  // Recorrer todas las casillas de verificación para ver cuáles están marcadas
+  checkboxes.forEach((checkbox) => {
+    if (checkbox.checked) {
+      categories.push(checkbox.value);
+    }
+  });
+
+  // Obtener todas las tarjetas
+
+  // Recorrer todas las tarjetas para ver cuáles deben mostrarse y cuáles no
+  card.forEach((card) => {
+    const categoriesList = card.dataset.categories.split(',');
+
+    if (categories.length === 0 || categories.some((cat) => categoriesList.includes(cat))) {
+      card.style.display = 'block';
+    } else {
+      card.style.display = 'none';
+    }
+  });
+}
+
+// Agregar un evento de cambio a cada casilla de verificación
+const checkboxes = document.querySelectorAll('input[type=checkbox]');
+checkboxes.forEach((checkbox) => {
+  checkbox.addEventListener('change', filterCards);
+});

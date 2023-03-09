@@ -178,10 +178,10 @@ let currentDate = data.currentDate;
 for (let x in Object.values(data.events)) {
   let property = data.events[x]
   if (property.date > currentDate) {
-    card.innerHTML += `<section class="card text-center p-2 m-2 col-8 col-sm-8 col-md-5 col-lg-4 col-xl-3">
-                        <div class="card rounded-3 shadow-sm">
+    card.innerHTML += `<section class="card text-center p-2 m-2 col-8 col-sm-8 col-md-5 col-lg-4 col-xl-3" id="card_filter">
+                        <div class="card rounded-3 shadow-sm" id="card_div">
                           <img src="${property.image}" class="card-img-top" style="height: 175px;" alt="${property.name}">
-                          <h2 class="card-title"><b>${property.name}</b></h2>
+                          <h2 class="card-title">${property.name}</h2>
                           <p class="list-group-item">${property.description}</p>
                           <ul class="list-group list-group-flush">
                           <li class="list-group-item"><b>Place:</b> ${property.place}</li>
@@ -190,8 +190,21 @@ for (let x in Object.values(data.events)) {
                             <h6 class="card-link"><b>Price:</b> $${property.price}</h6>
                             <h6 class="card-link"><b>Date:</b> ${property.date}</h6>
                           </div>
-                          <a class="btn btn-primary" href="./details.html">see more</a>
+                          <a class="btn btn-primary" href="./details.html?id=${property._id}">see more</a>
                         </div>
                       </section>`;
   }
 };
+
+document.addEventListener("keyup", e => {
+  if (e.target.matches(".form-control")) {
+
+    if (e.key === "Escape")e.target.value = ""
+
+    document.querySelectorAll("#card_filter").forEach(card => {
+      card.textContent.toLowerCase().includes(e.target.value.toLowerCase())
+      ? card.classList.remove("filter")
+      : card.classList.add("filter");
+    });
+  }
+})
