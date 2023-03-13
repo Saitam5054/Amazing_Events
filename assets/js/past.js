@@ -185,6 +185,7 @@ for (let x in Object.values(data.events)) {
                           <p class="list-group-item">${property.description}</p>
                           <ul class="list-group list-group-flush">
                           <li class="list-group-item"><b>Place:</b> ${property.place}</li>
+                          <p class="card-text" style="display:none" id="card_property"><b>Category:</b> ${property.category}</p>
                           </ul>
                           <div class="card-body d-flex justify-content-between">
                             <h6 class="card-link"><b>Price:</b> $${property.price}</h6>
@@ -208,3 +209,35 @@ document.addEventListener("keyup", e => {
     });
   }
 })
+
+const checkboxes = document.querySelectorAll('input[type=checkbox]');
+const cards = document.querySelectorAll('#card_filter');
+
+function filterCards() {
+  let showAll = true;
+  for (let j = 0; j < checkboxes.length; j++) {
+    if (checkboxes[j].checked) {
+      showAll = false;
+      break;
+    }
+  }
+  for (let i = 0; i < cards.length; i++) {
+    let card = cards[i];
+    let cardCategory = card.querySelector('#card_property').textContent.toLowerCase();
+    let showCard = false;
+    for (let j = 0; j < checkboxes.length; j++) {
+      let checkbox = checkboxes[j];
+      if (checkbox.checked && cardCategory.includes(checkbox.value.toLowerCase())) {
+        showCard = true;
+        break;
+      }
+    }
+    if (showAll || showCard) {
+      card.classList.remove('hidden');
+    } else {
+      card.classList.add('hidden');
+    }
+  }
+}
+
+checkboxes.forEach(checkbox => checkbox.addEventListener('change', filterCards));

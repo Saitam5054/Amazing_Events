@@ -69,6 +69,16 @@ label {
     background-color: rgb(230, 238, 240);
 }
 
+.search-input {
+    margin-right: 10px;
+}
+
+.input-group button {
+    background-color: red;
+    color: white;
+    font-weight: bold;
+}
+
 #card-home section:hover, #card-upcoming section:hover, #card-past section:hover {
     transform: scale(1.3);
     background-color: rgba(180, 178, 172, 0.76);
@@ -108,6 +118,17 @@ label {
     font-size: 20px;
 }
 
+#card_filter:not(.filter) {
+    opacity: 1;
+    transition: opacity 1s ease;
+}
+
+#card_filter.hidden {
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    order: 1;
+}
+  
 .filter {
     opacity: 0;
     transition: opacity 0.5s ease;

@@ -183,6 +183,7 @@ for (let x in Object.values(data.events)) {
                           <p class="list-group-item">${property.description}</p>
                           <ul class="list-group list-group-flush">
                             <li class="list-group-item"><b>Place:</b> ${property.place}</li>
+                            <p class="card-text" style="display:none" id="card_property"><b>Category:</b> ${property.category}</p>
                           </ul>
                           <div class="card-body d-flex justify-content-between">
                             <h6 class="card-link"><b>Price:</b> $${property.price}</h6>
@@ -206,43 +207,54 @@ document.addEventListener("keyup", e => {
   }
 })
 
-let categories = data.events.filter((u) => u.category);
-categories.forEach(i => console.log(i.category))
-
-
-let element = document.getElementById("checkbox")[name].checked;
-
-if (element = categories.forEach(i => i.category)) {
-  document.querySelectorAll("#card_filter").forEach(card => {
-    card.textContent
-    ? card.classList.remove("filter")
-    : card.classList.add("filter");
-  });
-}
-
-
+const checkboxes = document.querySelectorAll('input[type=checkbox]');
+const cards = document.querySelectorAll('#card_filter');
 
 function filterCards() {
-  // Obtener todas las casillas de verificación
-  const checkboxes = document.querySelectorAll('input[type=checkbox]');
-
-  // Crear una matriz vacía para almacenar las categorías seleccionadas
-  const categories = [];
-
-  // Recorrer todas las casillas de verificación para ver cuáles están marcadas
-  checkboxes.forEach((checkbox) => {
-    if (checkbox.checked) {
-      categories.push(checkbox.value);
+  let showAll = true;
+  for (let j = 0; j < checkboxes.length; j++) {
+    if (checkboxes[j].checked) {
+      showAll = false;
+      break;
     }
-  });
+  }
+  for (let i = 0; i < cards.length; i++) {
+    let card = cards[i];
+    let cardCategory = card.querySelector('#card_property').textContent.toLowerCase();
+    let showCard = false;
+    for (let j = 0; j < checkboxes.length; j++) {
+      let checkbox = checkboxes[j];
+      if (checkbox.checked && cardCategory.includes(checkbox.value.toLowerCase())) {
+        showCard = true;
+        break;
+      }
+    }
+    if (showAll || showCard) {
+      card.classList.remove('hidden');
+    } else {
+      card.classList.add('hidden');
+    }
+  }
+}
 
-  // Obtener todas las tarjetas
+checkboxes.forEach(checkbox => checkbox.addEventListener('change', filterCards));
 
-  // Recorrer todas las tarjetas para ver cuáles deben mostrarse y cuáles no
-  card.forEach((card) => {
-    const categoriesList = card.dataset.categories.split(',');
 
-    if (categories.length === 0 || categories.some((cat) => categoriesList.includes(cat))) {
+
+
+
+/* const cards = document.querySelectorAll('#card_filter');
+
+function filterCards() {
+  
+  const checked = Array.from(checkboxes);
+  const selectedCheckboxes = checked.filter(checkbox => checkbox.checked);
+  const selectedCategories = selectedCheckboxes.map(checkbox => checkbox.id.toLowerCase().split(' '));
+
+  cards.forEach(card => {
+    console.log(card)
+    if (selectedCategories.some(category => card.classList.contains(category))) {
+      console.log('Mostrando la tarjeta:', card.classList.contains(category));
       card.style.display = 'block';
     } else {
       card.style.display = 'none';
@@ -250,8 +262,45 @@ function filterCards() {
   });
 }
 
-// Agregar un evento de cambio a cada casilla de verificación
-const checkboxes = document.querySelectorAll('input[type=checkbox]');
-checkboxes.forEach((checkbox) => {
-  checkbox.addEventListener('change', filterCards);
-});
+checkboxes.forEach(checkbox => checkbox.addEventListener('change', filterCards));
+ */
+
+
+
+/* let checkboxes = document.querySelectorAll('input[type=checkbox]');
+let cards = document.querySelectorAll('#card_filter');
+
+function filterCards() {
+  const checked = Array.from(checkboxes).filter(checkbox => checkbox.checked).map(checkbox => checkbox.id);
+  cards.forEach(card => {
+    if (checked.every(category => card.classList.contains(category))) {
+      card.style.display = 'block';
+    } else {
+      card.style.display = 'none';
+    }
+  });
+}
+
+checkboxes.forEach(checkbox => checkbox.addEventListener('change', filterCards)); */
+
+
+
+
+/* const checkboxes = document.querySelectorAll('input[type=checkbox]');
+const cards = document.querySelectorAll('.card');
+
+function filterCards() {
+  const checked = Array.from(checkboxes);
+  const selectedCheckboxes = checked.filter(checkbox => checkbox.checked);
+  const selectedCategories = selectedCheckboxes.map(checkbox => checkbox.id.toLowerCase().split(' '));
+  cards.forEach(card => {
+    const categories = card.classList;
+    if (selectedCategories.every(category => categories.contains(`category-${category}`))) {
+      card.style.display = 'block';
+    } else {
+      card.style.display = 'none';
+    }
+  });
+}
+
+checkboxes.forEach(checkbox => checkbox.addEventListener('change', filterCards)); */
