@@ -25,6 +25,10 @@ nav a:visited {
     color: rgb(255, 255, 255);
 }
 
+nav a:hover {
+    color: red;
+}
+
 #onpage {
     color: rgb(221, 20, 154);
 }
@@ -86,10 +90,38 @@ label {
     z-index: 1;
 }
 
+#card_filter {
+    background-color: rgba(180, 178, 172, 0.76);
+}
+
 #card_filter a {
     letter-spacing: 5px;
     font-weight: bold;
     text-transform: uppercase;
+}
+
+#no-match-section {
+    width: 430px;
+    height: 350px;
+    position: absolute;   
+}
+
+#no-match-section:hover {
+    transform: none !important;
+    background-color: rgba(180, 178, 172, 0.76);
+  }
+  
+
+#no-match-div {
+    background-color: rgb(255, 0, 0);
+    height: 100%;
+}
+
+#no-match-div p {
+    font-size: 35px;
+    font-weight: bold;
+    margin-top: 25px;
+    color: rgb(5, 15, 5);
 }
 
 #card-details {
@@ -116,6 +148,12 @@ label {
 
 #a_details {
     font-size: 20px;
+    width: 100%;
+    background-color: red;
+}
+
+#a_details:hover {
+    background-color: #d3142e;
 }
 
 #card_filter:not(.filter) {

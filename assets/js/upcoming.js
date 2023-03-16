@@ -199,45 +199,41 @@ for (let x in Object.values(data.events)) {
 
 document.addEventListener("keyup", e => {
   if (e.target.matches(".form-control")) {
-
-    if (e.key === "Escape")e.target.value = ""
-
-    document.querySelectorAll("#card_filter").forEach(card => {
-      card.textContent.toLowerCase().includes(e.target.value.toLowerCase())
-      ? card.classList.remove("filter")
-      : card.classList.add("filter");
+    if (e.key === "Escape") e.target.value = "";
+    const filter = e.target.value.toLowerCase();
+    const cards = document.querySelectorAll("#card_filter");
+    let foundMatch = false;
+    cards.forEach(card => {
+      const match = card.textContent.toLowerCase().includes(filter);
+      card.classList.toggle("filter", !match);
+      foundMatch = foundMatch || match;
     });
+    const noMatches = document.querySelector("#no-match-section");
+    if (!foundMatch && !noMatches) {
+      const noMatchHTML = `<section class="card text-center p-2 m-2 col-8 col-sm-8 col-md-5 col-lg-4 col-xl-3" id="no-match-section">
+                              <div class="card rounded-3 shadow-sm" id="no-match-div">
+                                <p class="list-group-item">NO MATCHES FOUND</p>
+                                <p class="list-group-item">PLEASE ENTER</p>
+                                <p class="list-group-item">A DIFFERENT TERM</p>
+                              </div>
+                            </section>`;
+      document.querySelector("#card-upcoming").insertAdjacentHTML("afterbegin", noMatchHTML);
+    } else if (foundMatch && noMatches) {
+      noMatches.remove();
+    }
   }
-})
+});
 
 const checkboxes = document.querySelectorAll('input[type=checkbox]');
 const cards = document.querySelectorAll('#card_filter');
 
-function filterCards() {
-  let showAll = true;
-  for (let j = 0; j < checkboxes.length; j++) {
-    if (checkboxes[j].checked) {
-      showAll = false;
-      break;
-    }
-  }
-  for (let i = 0; i < cards.length; i++) {
-    let card = cards[i];
-    let cardCategory = card.querySelector('#card_property').textContent.toLowerCase();
-    let showCard = false;
-    for (let j = 0; j < checkboxes.length; j++) {
-      let checkbox = checkboxes[j];
-      if (checkbox.checked && cardCategory.includes(checkbox.value.toLowerCase())) {
-        showCard = true;
-        break;
-      }
-    }
-    if (showAll || showCard) {
-      card.classList.remove('hidden');
-    } else {
-      card.classList.add('hidden');
-    }
+function checkboxFilter() {
+  const selectedCheckboxes = Array.from(checkboxes).filter(checkbox => checkbox.checked);
+  for (const card of cards) {
+    const cardCategory = card.querySelector('#card_property').textContent.toLowerCase();
+    const showCard = selectedCheckboxes.some(checkbox => cardCategory.includes(checkbox.value.toLowerCase()));
+    card.classList.toggle('hidden', !showCard && selectedCheckboxes.length > 0);
   }
 }
 
-checkboxes.forEach(checkbox => checkbox.addEventListener('change', filterCards));
+checkboxes.forEach(checkbox => checkbox.addEventListener('change', checkboxFilter));

@@ -183,7 +183,7 @@ const details = data.events.find(property => property._id == id)
 let card = document.getElementById("card-details")
 
 if (details.estimate) {
-  card.innerHTML = `<section class="card text-center p-2 m-4 " id="card_filter">
+  card.innerHTML = `<section class="card text-center" id="card_filter">
                     <div class="card mb-3" style="max-width: auto;">
                       <div class="row g-0">
                         <div class="col-md-4">
