@@ -11,6 +11,7 @@
     integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
     crossorigin="anonymous"></script>
   <link rel="stylesheet" href="./assets/style/style.css">
+  <link rel="icon" type="image/png" href="./assets/images/Icon_Amazing_Events.png">
   <title>Stats</title>
 </head>
 
@@ -52,131 +53,85 @@
 
   <div id="carousel" class="carousel slide py-2 mx-2 shadow rounded collap">
     <div class="carousel-inner">
-        <div class="carousel-item">
-            <a href="./home.html" class="carouselItem text-decoration-none">
-                <h3 class="text-center">Home</h3>
-            </a>
-        </div>
-        <div class="carousel-item">
-            <a href="./upcoming.html" class="carouselItem text-decoration-none">
-                <h3 class="text-center">Upcoming Events</h3>
-            </a>
-        </div>
-        <div class="carousel-item">
-            <a href="./past.html" class="carouselItem text-decoration-none">
-                <h3 class="text-center">Past Events</h3>
-            </a>
-        </div>
-        <div class="carousel-item">
-            <a href="./contact.html" class="carouselItem text-decoration-none">
-                <h3 class="text-center">Contact Us</h3>
-            </a>
-        </div>
-        <div class="carousel-item active">
-            <a href="./stats.html" class="carouselItem text-decoration-none">
-                <h3 class="text-center">Stats</h3>
-            </a>
-        </div>
+      <div class="carousel-item">
+        <a href="./home.html" class="carouselItem text-decoration-none">
+          <h3 class="text-center">Home</h3>
+        </a>
+      </div>
+      <div class="carousel-item">
+        <a href="./upcoming.html" class="carouselItem text-decoration-none">
+          <h3 class="text-center">Upcoming Events</h3>
+        </a>
+      </div>
+      <div class="carousel-item">
+        <a href="./past.html" class="carouselItem text-decoration-none">
+          <h3 class="text-center">Past Events</h3>
+        </a>
+      </div>
+      <div class="carousel-item">
+        <a href="./contact.html" class="carouselItem text-decoration-none">
+          <h3 class="text-center">Contact Us</h3>
+        </a>
+      </div>
+      <div class="carousel-item active">
+        <a href="./stats.html" class="carouselItem text-decoration-none">
+          <h3 class="text-center">Stats</h3>
+        </a>
+      </div>
 
     </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#carousel"
-        data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
     </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#carousel"
-        data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
+    <button class="carousel-control-next" type="button" data-bs-target="#carousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
     </button>
-</div>
+  </div>
 
   <main class="container">
 
-    <table class="table table-hover">
+    <table class="table table-hover table-bordered" id="table1">
+      <caption>EVENTS STATITICS</caption>
       <thead>
         <tr>
-          <th colspan="3">Events statitics</th>
+          <th>Events with the highest percentage of attendance</th>
+          <th>Events with the lowest percentage of attendance</th>
+          <th>Event with larger capacity</th>
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td>Events with the highest percentage of attendance</td>
-          <td>Events with the lowest percentage of attendance</td>
-          <td>Event with larger capacity</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td></td>
-          <td></td>
+        <tr class="tr1">
+          <!-- stats.js -->
         </tr>
       </tbody>
+    </table>
+    <table class="table table-hover table-bordered">
+      <caption>UPCOMING EVENTS STATITICS BY CATEGORY</caption>
       <thead>
         <tr>
-          <th colspan="3">Upcoming events statistics by category</th>
+          <th>Categories</th>
+          <th>Revenues</th>
+          <th>Percentage of attendance</th>
         </tr>
       </thead>
-      <tbody>
-        <tr>
-          <td>Categories</td>
-          <td>Revenues</td>
-          <td>Percentage of attendance</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td></td>
-          <td></td>
-        </tr>
-        <tr>
-          <td></td>
-          <td></td>
-          <td></td>
-        </tr>
-        <tr>
-          <td></td>
-          <td></td>
-          <td></td>
-        </tr>
+      <tbody class="tr2">
+        <!-- stats.js -->
       </tbody>
+    </table>
+    <table class="table table-hover table-bordered">
+      <caption>PAST EVENTS STATITICS BY CATEGORY</caption>
       <thead>
         <tr>
-          <th colspan="3">Past events statistic by category</th>
+          <th>Categories</th>
+          <th>Revenues</th>
+          <th>Percentage of attendance</th>
         </tr>
       </thead>
-      <tbody>
-        <tr>
-          <td>Categories</td>
-          <td>Revenues</td>
-          <td>Percentage of attendance</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td></td>
-          <td></td>
-        </tr>
-        <tr>
-          <td></td>
-          <td></td>
-          <td></td>
-        </tr>
-        <tr>
-          <td></td>
-          <td></td>
-          <td></td>
-        </tr>
-        <tr>
-          <td></td>
-          <td></td>
-          <td></td>
-        </tr>
-        <tr>
-          <td></td>
-          <td></td>
-          <td></td>
-        </tr>
-
+      <tbody class="tr3">
+        <!-- stats.js -->  
       </tbody>
-
     </table>
 
   </main>
@@ -216,5 +171,7 @@
     </ul>
   </footer>
 </body>
+
+<script src="./assets/js/stats.js"></script>
 
 </html>
