@@ -178,6 +178,15 @@ label {
     width: 40em;
 }
 
+.table {
+    table-layout: fixed;
+  }
+  
+.table th,
+.table td {
+    width: 33.33%;
+}
+
 table {
     background-color: white;
 }
@@ -192,7 +201,7 @@ caption {
 }
 
 #table1 {
-    margin-top: 100px;
+    margin-top: 50px;
 }
 
 thead {
